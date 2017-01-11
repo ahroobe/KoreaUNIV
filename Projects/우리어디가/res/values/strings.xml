@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">우리 어디가?</string>
+    <string name="best1">BEST 1</string>
+    <string name="best2">BEST 2</string>
+    <string name="best3">BEST 3</string>
+	<string name="str_done">완료</string>
+	<string name="facebook_app_id">311173049074193</string>
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#299CE3"
+  >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/base"
+        android:orientation="vertical"
+        android:layout_centerInParent="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/goalname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="목표명:"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editText10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:singleLine="true"
+                 >
+            </EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/times"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="횟　수:"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editText20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="3"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/qjs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(ex)독서 20권->20회)"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/make2"
+                    android:layout_width="116dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="10dp"
+                    android:text="만들기"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:background="#299CE3" />
+
+                <Button
+                    android:id="@+id/cancel2"
+                    android:layout_width="116dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:text="취　소"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:background="#299CE3" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>
