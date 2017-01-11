@@ -1,0 +1,273 @@
+TRY-MIB DEFINITIONS ::= BEGIN
+	IMPORTS
+		private,IpAddress,private, MODULE-IDENTITY, OBJECT-TYPE, Counter32,Integer32 FROM SNMPv2-SMI
+		DisplayString, TimeStamp FROM SNMPv2-TC;
+
+ahroobe MODULE-IDENTITY
+	LAST-UPDATED "201606220000Z"
+	ORGANIZATION "ahroobe"
+	CONTACT-INFO "vivian2323@naver.com"
+	DESCRIPTION "IP Term Project"
+	REVISION "201606220000Z"
+	DESCRIPTION "Add Attributes"
+	::= { private 2 }
+
+	refri		OBJECT IDENTIFIER ::= { ahroobe 1 }
+	aircon		OBJECT IDENTIFIER ::= { ahroobe 2 }
+	printer		OBJECT IDENTIFIER ::= { ahroobe 3 }
+	washmach	OBJECT IDENTIFIER ::= { ahroobe 4 }
+	lightcon	OBJECT IDENTIFIER ::= { ahroobe 5 }
+
+refriMachCode OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION
+		"Machine Code of refrigerator"
+	::= {refri 1}
+
+refriNowTempL OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"Temperature of Left-Refrigerator"
+	::= {refri 2}
+
+refriNowTempR OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"Temperature of Right-Refrigerator"
+	::= {refri 3}
+
+refriDoorOpen OBJECT-TYPE
+	SYNTAX Counter32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"The number of doors opened"
+	::= {refri 4}
+
+refriKg OBJECT-TYPE
+        SYNTAX Integer32
+        MAX-ACCESS read-write
+        STATUS current
+        DESCRIPTION
+                "Kg of refrigerator"
+        ::= {refri 5}
+
+
+--RefriEntry ::= SEQUENCE {
+--	refriEntryIndex
+--		Integer32,
+--	refriFoodString
+--		DisplayString,
+--	refriFoodKg
+--		Integer32 }
+
+--refriTable OBJECT-TYPE
+--	SYNTAX SEQUENCE OF refriEntry
+--	MAX-ACCESS not-accessible
+--	STATUS current
+--	DESCRIPTION
+--		"food list table object."
+--	::= {refri 10}
+
+--refriEntry OBJECT-TYPE
+--	SYNTAX RefriEntry
+--	MAX-ACCESS not-accessible
+--	STATUS current
+--	DESCRIPTION
+--		"Entry of refriTable"
+--	INDEX { refriEntryIndex }
+--	::= {refriTable 1}
+
+--refriEntryIndex OBJECT-TYPE
+--	SYNTAX Integer32 (0..65536)
+--	MAX-ACCESS read-create
+--	STATUS current
+--	DESCRIPTION
+--		"Reference index for my refriEntry"
+--	::= {refriEntry 1}
+
+--refriFoodName OBJECT-TYPE
+--	SYNTAX DisplayString
+--	MAX-ACCESS read-create
+--	STATUS current
+--	DESCRIPTION
+--		"Name of food"
+--	::= {refriEntry 2}
+
+--refriFoodKg OBJECT-TYPE
+--	SYNTAX Integer32
+--	MAX-ACCESS read-create
+--	STATUS current
+--	DESCRIPTION
+--		"Kg of food"
+--	::= {refriEntry 3}
+
+airconMachCode OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION
+		"Code of Machine"
+	::= {aircon 1}
+
+airconHopeTemp OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"hope temperature of user"
+	::= {aircon 2}
+
+airconNowTemp OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"now temperature of aircon"
+	::= {aircon 3}
+
+airconDura OBJECT-TYPE
+	SYNTAX Counter32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"duration of aircon forever, in minutes"
+	::= {aircon 4}
+
+airconOn OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"OnOff status of aircondition"
+	::= {aircon 5}
+
+printerMachCode OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION
+		"Machine code of printer"
+	::= {printer 1}
+
+printerRemInk OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"Remain ink of printer"
+	::= {printer 2}
+
+printerOn OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"On off status of printer"
+	::= {printer 3}
+
+printerPaper OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"remain papers of printer"
+	::= {printer 4}
+
+printerLog OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"log of printer"
+	::= {printer 5}
+
+
+washmachCode OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION
+		"machine code of washing machiine"
+	::= { washmach 1 }
+
+washmachRemDet OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"Remain detergent"
+	::= { washmach 2 }
+
+washmachDura OBJECT-TYPE
+	SYNTAX Counter32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"Duration time of washingmachine"
+	::= { washmach 3 }
+
+washmachpower OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"Power of washing machine"
+	::= { washmach 4 }
+
+washmachOn OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"on or off. status of washing machine"
+	::= { washmach 5 }
+
+lightMachCode OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION
+		"Machine Code of light controller"
+	::= { lightcon 1 }
+
+lightconMaxBright OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-only
+	STATUS current
+	DESCRIPTION
+		"Max brightness of light"
+	::= { lightcon 2 }
+
+lightconPower OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"Power of light controller"
+	::= { lightcon 3 }
+
+lightconDura OBJECT-TYPE
+	SYNTAX Counter32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"Duration time of light"
+	::= { lightcon 4 }
+
+lightconOn OBJECT-TYPE
+	SYNTAX Integer32
+	MAX-ACCESS read-write
+	STATUS current
+	DESCRIPTION
+		"On off status of light"
+	::= { lightcon 5 }
+
+
+END
